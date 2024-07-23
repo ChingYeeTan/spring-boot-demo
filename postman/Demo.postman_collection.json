@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "fbaecbf8-6d59-40ac-bf4f-f01c77a80840",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19866507"
+	},
+	"item": [
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"John Doe4\",\r\n    \"email\": \"john.doe4@example.com\",\r\n    \"phone\": \"123-456-7894\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9999/v1/customer/create-customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"Mary\",\r\n    \"email\": \"Mary2@example.com\",\r\n    \"phone\": \"123-456-7892\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9999/v1/customer/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/v1/customer/get-all-customers?page=0&size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"v1",
+						"customer",
+						"get-all-customers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9999/v1/customer/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Call External Api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9999/v1/customer/call-external-api"
+			},
+			"response": []
+		}
+	]
+}
